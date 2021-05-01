@@ -1,0 +1,15 @@
+Context
+This is LendingClub's complete loan data for all loans issued through the time period stated in US area.
+
+Content
+Training set consist of loan data from 2007 till 2015 and test data set contains loan data from 2016 till 2017.
+US State codes with their complete name has been provided for maps creation.
+
+
+
+语境
+这是LendingClub的完整贷款数据，包括美国地区在所述时间段内发放的所有贷款。
+
+贷款内容
+训练集由2007年至2015年的贷款数据组成，测试数据集包含2016年至2017年的贷款数据。
+美国各州代码及其完整的名称已被提供给地图创建。

@@ -1,0 +1,4 @@
+*.csv filter=lfs diff=lfs merge=lfs -text
+Data/* filter=lfs diff=lfs merge=lfs -text
+"Brazilian E-Commerce Public Dataset by Olist/*" filter=lfs diff=lfs merge=lfs -text
+"LendingClub Issued Loans/*" filter=lfs diff=lfs merge=lfs -text

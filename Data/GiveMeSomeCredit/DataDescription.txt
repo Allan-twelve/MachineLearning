@@ -1,0 +1,12 @@
+Banks play a crucial role in market economies. They decide who can get finance and on what terms and can make or break investment decisions. For markets and society to function, individuals and companies need access to credit. 
+
+Credit scoring algorithms, which make a guess at the probability of default, are the method banks use to determine whether or not a loan should be granted. This competition requires participants to improve on the state of the art in credit scoring, by predicting the probability that somebody will experience financial distress in the next two years.
+
+The goal of this competition is to build a model that borrowers can use to help make the best financial decisions.
+
+
+银行在市场经济中发挥着关键作用。它们决定谁能获得资金和以什么条件获得资金，并能决定投资决策的成败。为了使市场和社会发挥作用，个人和公司需要获得信贷。
+
+信用评分算法是银行用来决定是否应该发放贷款的方法，它对违约的可能性进行猜测。本次比赛要求参赛者在信用评分的基础上进行改进，预测某人在未来两年内遭遇财务困境的概率。
+
+本次比赛的目标是建立一个模型，让借款人可以用来帮助做出最佳的财务决策。

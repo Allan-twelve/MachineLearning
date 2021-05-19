@@ -24,25 +24,28 @@ def train_test_split(_x, _y, size_of_test):
         _con = np.concatenate([_x, _y], axis=1)
         _test = _con[rand]
         _train = np.delete(_con, rand, axis=0)
+        np.random.shuffle(_train)
         x_train, y_train = np.split(_train, (length,), axis=1)
         x_test, y_test = np.split(_test, (length,), axis=1)
         x_train = pd.DataFrame(x_train, columns=x_col)
         y_train = pd.DataFrame(y_train, columns=y_col)
         x_test = pd.DataFrame(x_test, columns=x_col)
         y_test = pd.DataFrame(y_test, columns=y_col)
-        return x_train, y_train, x_test, y_test
+        return x_train, x_test, y_train, y_test
     elif isinstance(_x, np.ndarray):
         _l = _x.shape[0]
         length = _x.shape[1]
         size = int(size_of_test * _l)
         # 这里的随机数不存在重复的
         rand = np.random.choice(_l, size=size, replace=False)
+        _y = np.array(_y).reshape(-1, 1)
         _con = np.concatenate([_x, _y], axis=1)
         _test = _con[rand]
         _train = np.delete(_con, rand, axis=0)
+        np.random.shuffle(_train)
         x_train, y_train = np.split(_train, (length,), axis=1)
         x_test, y_test = np.split(_test, (length,), axis=1)
-        return x_train, y_train, x_test, y_test
+        return x_train, x_test, y_train, y_test
     else:
         raise TypeError(str(type(_x))+"is not <class 'numpy.ndarray'> or <class 'pandas.DataFrame'>")
 

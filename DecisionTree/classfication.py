@@ -111,9 +111,9 @@ class DecisionTree:
         _classes = _dataframe.iloc[:, self.col]
         if self.cut:
             if np.max(_classes.value_counts(normalize=True)) > self.alpha:
-                return np.argmax(_classes.value_counts())
+                return np.argmax(np.bincount(np.array(_classes)))
             if len(_dataframe.columns) == 1:
-                return np.argmax(_classes.value_counts())
+                return np.argmax(np.bincount(np.array(_classes)))
             _feature = chooseFeature(_dataframe, _col=self.col, mode=self.mode)
             decision_tree = {_feature: {}}
             _values = list(set(_dataframe[_feature]))  # .unique().tolist()
@@ -123,7 +123,7 @@ class DecisionTree:
             return decision_tree
         else:
             if len(_dataframe.columns) == 1:
-                return np.argmax(_classes.value_counts())
+                return np.argmax(np.bincount(np.array(_classes)))
             _feature = chooseFeature(_dataframe, _col=self.col, mode=self.mode)
             decision_tree = {_feature: {}}
             _values = list(set(_dataframe[_feature]))  # .unique().tolist()

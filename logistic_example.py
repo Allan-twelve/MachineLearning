@@ -16,7 +16,7 @@ lr = LogisticRegression()
 print('十次交叉验证', cross_validation(x, y, lr, accuracy, 10))
 
 # 数据分割
-x_train, y_train, x_test, y_test = train_test_split(x, y, 0.2)
+x_train, x_test, y_train, y_test = train_test_split(x, y, 0.2)
 
 # 数据拟合
 lr.fit(x_train, y_train)

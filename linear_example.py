@@ -30,8 +30,7 @@ lr2 = GradientDescent.LinearRegression(alpha=0.000003, cycle=1000)
 print('十次交叉验证(正规方程)：', cross_validation(x, y, lr1, rSquare, 10))
 
 # 分割数据集
-x_train, y_train, x_test, y_test = train_test_split(x, y, 0.2)
-
+x_train, x_test, y_train, y_test = train_test_split(x, y, 0.2)
 # 数据拟合
 lr1.fit(x_train, y_train)
 lr2.fit(x_train, y_train)

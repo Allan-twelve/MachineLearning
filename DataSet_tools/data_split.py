@@ -16,6 +16,7 @@ def train_test_split(_x, _y, size_of_test):
         y_col = _y.columns
         _x = np.array(_x)
         _y = np.array(_y)
+        y_type = _y.dtype
         _l = _x.shape[0]
         length = _x.shape[1]
         size = int(size_of_test * _l)
@@ -28,9 +29,9 @@ def train_test_split(_x, _y, size_of_test):
         x_train, y_train = np.split(_train, (length,), axis=1)
         x_test, y_test = np.split(_test, (length,), axis=1)
         x_train = pd.DataFrame(x_train, columns=x_col)
-        y_train = pd.DataFrame(y_train, columns=y_col)
         x_test = pd.DataFrame(x_test, columns=x_col)
-        y_test = pd.DataFrame(y_test, columns=y_col)
+        y_train = pd.DataFrame(y_train, columns=y_col, dtype=y_type)
+        y_test = pd.DataFrame(y_test, columns=y_col, dtype=y_type)
         return x_train, x_test, y_train, y_test
     elif isinstance(_x, np.ndarray):
         _l = _x.shape[0]
@@ -124,7 +125,7 @@ def bootstrapping(_x, _y, m):
         y_train = pd.DataFrame(y_train, columns=y_columns)
         x_test = pd.DataFrame(x_test, columns=x_columns)
         y_test = pd.DataFrame(y_test, columns=y_columns)
-        return x_train, y_train, x_test, y_test
+        return x_train, x_test, y_train, y_test
     elif isinstance(_x, np.ndarray):
         length = _x.shape[1]
         # 将x，y先合并再分开
@@ -135,6 +136,6 @@ def bootstrapping(_x, _y, m):
         _test = np.delete(_con, train_index, axis=0)
         x_train, y_train = np.split(_train, (length,), axis=1)
         x_test, y_test = np.split(_test, (length,), axis=1)
-        return x_train, y_train, x_test, y_test
+        return x_train, x_test, y_train, y_test
     else:
         raise ValueError(str(type(_x))+"is not <class 'numpy.ndarray'> or <class 'pandas.DataFrame'>")
